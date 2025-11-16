@@ -1,0 +1,240 @@
+================================================================================
+PERPLEXITY API DEMO - COMPLETE DIRECTORY TREE
+================================================================================
+
+pplx_api/
+│
+├── 📁 app/                                 Next.js App Router directory
+│   │
+│   ├── 📁 api/                            API Routes (Server-Side)
+│   │   ├── 📁 sonar/
+│   │   │   └── 📄 route.ts                POST /api/sonar - Sonar model endpoint
+│   │   │
+│   │   ├── 📁 sonar-pro/
+│   │   │   └── 📄 route.ts                POST /api/sonar-pro - Sonar Pro endpoint
+│   │   │
+│   │   └── 📁 sonar-reasoning/
+│   │       └── 📄 route.ts                POST /api/sonar-reasoning endpoint
+│   │
+│   ├── 📁 components/                     React Components
+│   │   ├── 📄 Tabs.tsx                    Tab navigation component
+│   │   ├── 📄 TextInput.tsx               Text input form component
+│   │   └── 📄 ResponseDisplay.tsx         API response display component
+│   │
+│   ├── 📄 globals.css                     Global CSS styles (Tailwind)
+│   ├── 📄 layout.tsx                      Root layout component
+│   └── 📄 page.tsx                        Main page (home)
+│
+├── 📁 lib/                                Shared Libraries
+│   └── 📄 perplexity.ts                   Perplexity API helper functions
+│
+├── 📁 node_modules/                       NPM dependencies (generated)
+│
+├── 📁 .next/                              Next.js build output (generated)
+│
+├── 📄 .env.local                          Environment variables (YOU CREATE THIS)
+├── 📄 .env.example                        Example environment file
+├── 📄 .gitignore                          Git ignore patterns
+│
+├── 📄 next.config.js                      Next.js configuration
+├── 📄 package.json                        NPM dependencies & scripts
+├── 📄 package-lock.json                   NPM lock file (generated)
+├── 📄 postcss.config.js                   PostCSS config (for Tailwind)
+├── 📄 tailwind.config.ts                  Tailwind CSS configuration
+├── 📄 tsconfig.json                       TypeScript configuration
+│
+├── 📄 README.md                           Main documentation
+├── 📄 SPEC.md                             Complete specification
+├── 📄 ARCHITECTURE.md                     Architecture documentation
+├── 📄 PROJECT_STRUCTURE.md                File structure guide
+├── 📄 SETUP_GUIDE.md                      Step-by-step setup guide
+├── 📄 SUMMARY.md                          Project summary
+├── 📄 ENV_SETUP.txt                       Environment setup guide
+└── 📄 DIRECTORY_TREE.txt                  This file
+
+================================================================================
+FILE COUNTS
+================================================================================
+
+Application Code Files:      10 files
+  - Components:              3 files (Tabs, TextInput, ResponseDisplay)
+  - Pages:                   2 files (page.tsx, layout.tsx)
+  - API Routes:              3 files (sonar, sonar-pro, sonar-reasoning)
+  - Libraries:               1 file  (perplexity.ts)
+  - Styles:                  1 file  (globals.css)
+
+Configuration Files:         7 files
+  - next.config.js
+  - package.json
+  - tsconfig.json
+  - tailwind.config.ts
+  - postcss.config.js
+  - .gitignore
+  - .env.example
+
+Documentation Files:         8 files
+  - README.md
+  - SPEC.md
+  - ARCHITECTURE.md
+  - PROJECT_STRUCTURE.md
+  - SETUP_GUIDE.md
+  - SUMMARY.md
+  - ENV_SETUP.txt
+  - DIRECTORY_TREE.txt
+
+Total Source Files:          25 files
+
+Generated Files (not in Git):
+  - node_modules/            (~300 MB, 250+ packages)
+  - .next/                   (~50 MB, build output)
+  - package-lock.json        (dependency lock)
+  - .env.local               (YOUR API KEY - create this!)
+
+================================================================================
+FILE PURPOSES
+================================================================================
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ ESSENTIAL FILES (Must Understand)                                       │
+├─────────────────────────────────────────────────────────────────────────┤
+│ app/page.tsx              → Main UI, state management, API calls        │
+│ app/components/Tabs.tsx   → Tab navigation between models               │
+│ lib/perplexity.ts         → Perplexity API integration                  │
+│ app/api/*/route.ts        → API endpoints (3 files)                     │
+│ .env.local                → Your API key (you create this)              │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ SUPPORTING FILES (Important to Know)                                    │
+├─────────────────────────────────────────────────────────────────────────┤
+│ app/components/TextInput.tsx      → Text input with validation          │
+│ app/components/ResponseDisplay.tsx → Response viewer with JSON          │
+│ app/layout.tsx                    → Root HTML/layout wrapper            │
+│ app/globals.css                   → Tailwind + custom styles            │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ CONFIGURATION FILES (Edit When Needed)                                  │
+├─────────────────────────────────────────────────────────────────────────┤
+│ package.json           → Dependencies, scripts                          │
+│ tsconfig.json          → TypeScript settings                            │
+│ tailwind.config.ts     → Tailwind theme/colors                          │
+│ next.config.js         → Next.js settings                               │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ DOCUMENTATION FILES (Read to Learn)                                     │
+├─────────────────────────────────────────────────────────────────────────┤
+│ README.md              → Start here! Overview & quick start             │
+│ SETUP_GUIDE.md         → Step-by-step setup instructions                │
+│ SPEC.md                → Complete technical specification               │
+│ ARCHITECTURE.md        → System architecture & design                   │
+│ PROJECT_STRUCTURE.md   → Detailed file organization                     │
+│ SUMMARY.md             → Quick project summary                          │
+│ ENV_SETUP.txt          → Environment variable setup                     │
+│ DIRECTORY_TREE.txt     → This file - visual tree                        │
+└─────────────────────────────────────────────────────────────────────────┘
+
+================================================================================
+COMPONENT HIERARCHY
+================================================================================
+
+app/layout.tsx (Root)
+  └── app/page.tsx (Main Page)
+        ├── app/components/Tabs.tsx
+        ├── app/components/TextInput.tsx
+        └── app/components/ResponseDisplay.tsx
+
+API Call Flow:
+
+app/page.tsx
+  └── fetch('/api/sonar' or '/api/sonar-pro' or '/api/sonar-reasoning')
+        └── app/api/[model]/route.ts
+              └── lib/perplexity.ts
+                    └── Perplexity API (external)
+
+================================================================================
+ADDING NEW FILES
+================================================================================
+
+To add a new model/tab:
+  1. Create: app/api/[model-name]/route.ts
+  2. Update: app/components/Tabs.tsx (add to tabs array)
+  3. Restart: npm run dev
+
+To add a new component:
+  1. Create: app/components/NewComponent.tsx
+  2. Import: in app/page.tsx
+  3. Use: <NewComponent />
+
+To add a new utility:
+  1. Create: lib/utility-name.ts
+  2. Export: functions/types
+  3. Import: from '@/lib/utility-name'
+
+================================================================================
+IMPORTANT NOTES
+================================================================================
+
+✅ Files marked "YOU CREATE THIS":
+   - .env.local (contains your API key)
+
+❌ Never commit these files:
+   - .env.local (has your API key)
+   - node_modules/ (too large)
+   - .next/ (build output)
+
+✅ Safe to edit:
+   - All files in app/
+   - All files in lib/
+   - tailwind.config.ts (for styling)
+
+⚠️  Edit with caution:
+   - package.json (dependency management)
+   - tsconfig.json (TypeScript config)
+   - next.config.js (Next.js config)
+
+📖 Just read (don't edit):
+   - All .md documentation files
+   - This file (DIRECTORY_TREE.txt)
+
+================================================================================
+TYPICAL WORKFLOW
+================================================================================
+
+Day 1 - Setup:
+  1. cd pplx_api
+  2. npm install
+  3. Create .env.local with API key
+  4. npm run dev
+  5. Open http://localhost:3000
+
+Daily Development:
+  1. npm run dev (start server)
+  2. Edit files in app/ or lib/
+  3. Browser auto-refreshes
+  4. Check console for errors
+  5. Ctrl+C to stop
+
+Before Deployment:
+  1. npm run build (test build)
+  2. npm start (test production)
+  3. Fix any errors
+  4. Deploy to platform
+  5. Set PERPLEXITY_API_KEY in platform
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+1. Read README.md for overview
+2. Follow SETUP_GUIDE.md to get running
+3. Explore app/page.tsx to understand flow
+4. Check app/components/*.tsx to see UI
+5. Review lib/perplexity.ts for API logic
+6. Read SPEC.md for complete details
+
+================================================================================
+HAPPY CODING! 🚀
+================================================================================
+

@@ -1,0 +1,268 @@
+================================================================================
+                    🚀 QUICK START - RUN LOCALLY IN 4 STEPS
+================================================================================
+
+✅ NEW FEATURE: Timer now shows how long each request takes! ⏱️
+
+================================================================================
+                            STEP-BY-STEP GUIDE
+================================================================================
+
+STEP 1: Open Terminal/PowerShell
+────────────────────────────────────────────────────────────────────────────
+Windows:  Press Win+X → Choose "Windows PowerShell"
+Mac:      Press Cmd+Space → Type "Terminal"
+
+STEP 2: Navigate to Project
+────────────────────────────────────────────────────────────────────────────
+Windows:  cd C:\Users\sabil\OneDrive\Documents\Code\pplx_api
+Mac:      cd /path/to/pplx_api
+
+STEP 3: Install Dependencies (First Time Only)
+────────────────────────────────────────────────────────────────────────────
+Command:  npm install
+Wait:     ~1-2 minutes
+
+STEP 4: Start the Server
+────────────────────────────────────────────────────────────────────────────
+Command:  npm run dev
+Wait:     ~8-10 seconds
+Look for: "✓ Ready in 7.7s"
+
+STEP 5: Open Browser
+────────────────────────────────────────────────────────────────────────────
+URL:      http://localhost:3000
+
+================================================================================
+                        ⏱️ NEW TIMER FEATURE EXPLAINED
+================================================================================
+
+WHERE YOU'LL SEE THE TIMER:
+────────────────────────────────────────────────────────────────────────────
+✅ In the summary box after each successful request
+   Example: "🕐 Duration: 3.42s"
+
+✅ In error messages if request fails
+   Example: "Failed after: 1.23s"
+
+WHAT IT MEASURES:
+────────────────────────────────────────────────────────────────────────────
+✅ Total round-trip time (your computer → server → Perplexity → back)
+✅ Includes network latency
+✅ Shows in seconds (s) or milliseconds (ms)
+✅ Updates after every request
+
+TYPICAL TIMES YOU'LL SEE:
+────────────────────────────────────────────────────────────────────────────
+🚀 Search API:          ~2.0s   (fastest)
+⚡ Sonar Reasoning:     ~3.4s   (fast)
+⚡ Deep Research:       ~4.6s   (fast)
+⚡ Reasoning Pro:       ~4.8s   (fast)
+🔍 Sonar Pro:          ~16.8s   (slower - web search)
+🔍 Sonar:              ~19.1s   (slower - web search)
+
+================================================================================
+                        🧪 TESTING EACH ENDPOINT
+================================================================================
+
+RECOMMENDED TEST INPUT:
+────────────────────────────────────────────────────────────────────────────
+Artificial intelligence is revolutionizing healthcare by enabling early 
+disease detection through advanced pattern recognition in medical imaging. 
+Machine learning algorithms can now analyze vast datasets to identify 
+subtle anomalies that might escape human observation, potentially saving 
+countless lives through earlier intervention.
+
+HOW TO TEST:
+────────────────────────────────────────────────────────────────────────────
+1. Click a tab (Sonar, Sonar Pro, etc.)
+2. Paste the text above
+3. Click "Summarize"
+4. Watch for:
+   - ⏳ Loading spinner
+   - ⏱️ Timer counting
+5. See results:
+   - 📝 Summary in blue box
+   - 🕐 Duration displayed
+   - 📊 Token usage shown
+   - 🔄 Model name
+
+TRY ALL 6 TABS:
+────────────────────────────────────────────────────────────────────────────
+□ Tab 1: Sonar              (expect ~19s)
+□ Tab 2: Sonar Pro          (expect ~17s)
+□ Tab 3: Sonar Reasoning    (expect ~3s)  ⚡ FAST!
+□ Tab 4: Sonar Reasoning Pro(expect ~5s)  ⚡ FAST!
+□ Tab 5: Deep Research      (expect ~5s)  ⚡ FAST!
+□ Tab 6: Search API         (expect ~2s)  🚀 FASTEST!
+
+================================================================================
+                        📊 WHAT YOU'LL SEE IN UI
+================================================================================
+
+SUCCESSFUL RESPONSE:
+────────────────────────────────────────────────────────────────────────────
+┌──────────────────────────────────────────────────────────────────────┐
+│ ✅ Summary                                                           │
+│                                                                      │
+│ [AI-generated 1-2 sentence summary here]                            │
+│                                                                      │
+│ ─────────────────────────────────────────────────────────────────── │
+│ Model: sonar  •  Tokens: 152 (83 prompt + 69 completion)            │
+│ 🕐 Duration: 3.42s                                                  │
+└──────────────────────────────────────────────────────────────────────┘
+
+TERMINAL OUTPUT (Server Logs):
+────────────────────────────────────────────────────────────────────────────
+POST /api/sonar 200 in 15822ms              ← Server processing time
+POST /api/sonar-reasoning 200 in 3396ms    ← Much faster!
+
+Note: Server time may differ from UI timer (UI includes network latency)
+
+================================================================================
+                        🐛 TROUBLESHOOTING
+================================================================================
+
+PROBLEM: "Cannot find module"
+SOLUTION: npm install
+
+PROBLEM: "API key not configured"
+SOLUTION: 
+  1. Create .env.local file in project root
+  2. Add: PERPLEXITY_API_KEY=pplx-your-key-here
+  3. Restart server (Ctrl+C then npm run dev)
+
+PROBLEM: "Port 3000 already in use"
+SOLUTION: npm run dev -- -p 3001
+          Then open http://localhost:3001
+
+PROBLEM: "Authentication failed"
+SOLUTION: 
+  1. Get new API key from https://www.perplexity.ai/settings/api
+  2. Update .env.local
+  3. Restart server
+
+PROBLEM: Very slow response (>30s)
+SOLUTION: 
+  - Check internet connection
+  - Try shorter text
+  - Try faster models (Reasoning, Search API)
+
+PROBLEM: Timer shows but no response
+SOLUTION: 
+  - Search models take 15-20 seconds (normal)
+  - Wait patiently
+  - If >30s, check server logs for errors
+
+================================================================================
+                        🎯 TIPS FOR BEST EXPERIENCE
+================================================================================
+
+1. START WITH FAST MODELS
+   ✅ Try Search API first (2s response)
+   ✅ Then Sonar Reasoning (3-5s)
+   ✅ This confirms everything works quickly
+
+2. COMPARE RESPONSE TIMES
+   ✅ Test same text on different models
+   ✅ Note the duration differences
+   ✅ Understand which models are fastest
+
+3. WATCH TOKEN USAGE
+   ✅ More tokens = higher cost
+   ✅ UI shows exact token counts
+   ✅ Compare efficiency across models
+
+4. USE KEYBOARD SHORTCUTS
+   ✅ Ctrl+Enter (Win) / Cmd+Enter (Mac) to submit
+   ✅ Faster than clicking button
+
+5. MONITOR SERVER LOGS
+   ✅ Watch terminal for real-time processing times
+   ✅ See exactly when requests start/finish
+   ✅ Useful for debugging
+
+================================================================================
+                        📱 ACCESSING THE APP
+================================================================================
+
+LOCAL URL:           http://localhost:3000
+
+WHAT YOU'LL SEE:
+────────────────────────────────────────────────────────────────────────────
+✅ Header: "Perplexity API Demo"
+✅ Subtitle: "Test all 6 Perplexity AI endpoints"
+✅ 6 Tabs: Sonar, Sonar Pro, Sonar Reasoning, Reasoning Pro, Deep Research, Search API
+✅ Text Area: Large input box with character counter
+✅ Buttons: "Summarize" (blue) and "Clear" (gray)
+✅ Results Area: Shows summary, duration, tokens, and JSON
+
+================================================================================
+                        🛑 STOPPING THE SERVER
+================================================================================
+
+To stop the development server:
+  1. Go to terminal where server is running
+  2. Press Ctrl+C
+  3. Type Y if prompted
+
+Clean shutdown message:
+  ^C
+  Terminate batch job (Y/N)? Y
+
+================================================================================
+                        📚 MORE DOCUMENTATION
+================================================================================
+
+Detailed Guide:     HOW_TO_RUN_LOCALLY.md (comprehensive 400+ lines)
+General Docs:       README.md
+Test Results:       TEST_REPORT.md
+Quick Summary:      TESTING_SUMMARY.txt
+Architecture:       ARCHITECTURE.md
+
+================================================================================
+                        ✅ CHECKLIST
+================================================================================
+
+BEFORE YOU START:
+□ Node.js 18+ installed (check: node --version)
+□ Perplexity API key obtained
+□ Terminal/PowerShell open
+
+SETUP STEPS:
+□ Navigated to project directory
+□ Ran npm install
+□ Created .env.local with API key
+□ Ran npm run dev
+□ Opened http://localhost:3000
+
+TESTING:
+□ Tested Sonar tab (noted duration)
+□ Tested Sonar Pro tab (noted duration)
+□ Tested Sonar Reasoning tab (noted duration)
+□ Tested Sonar Reasoning Pro tab (noted duration)
+□ Tested Deep Research tab (noted duration)
+□ Tested Search API tab (noted duration)
+□ Compared response times
+□ Verified timer shows correctly
+
+================================================================================
+                        🎉 YOU'RE READY TO GO!
+================================================================================
+
+Everything is set up and ready. The timer feature is now live and will show
+you exactly how long each request takes in real-time!
+
+Key Points to Remember:
+  ✅ Timer shows in UI after each request
+  ✅ Fast models: 2-5 seconds
+  ✅ Search models: 15-20 seconds
+  ✅ Server logs show processing time
+  ✅ UI timer shows total round-trip time
+
+Happy Testing! 🚀
+
+For questions or issues, see HOW_TO_RUN_LOCALLY.md for detailed troubleshooting.
+
+================================================================================
+

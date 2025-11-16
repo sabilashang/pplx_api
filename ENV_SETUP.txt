@@ -1,0 +1,77 @@
+================================================================================
+ENVIRONMENT VARIABLE SETUP FOR PERPLEXITY API DEMO
+================================================================================
+
+STEP 1: GET YOUR API KEY
+------------------------
+1. Go to: https://www.perplexity.ai/settings/api
+2. Log in or create an account
+3. Click "Generate New API Key"
+4. Copy the key (starts with "pplx-")
+
+STEP 2: CREATE .env.local FILE
+------------------------------
+Create a file named ".env.local" in the project root directory.
+
+Location: C:\Users\sabil\OneDrive\Documents\Code\pplx_api\.env.local
+
+STEP 3: ADD YOUR API KEY
+------------------------
+Open .env.local and add this line:
+
+PERPLEXITY_API_KEY=pplx-your-actual-api-key-here
+
+EXAMPLE:
+-------
+If your API key is: pplx-a1b2c3d4e5f6g7h8i9j0
+
+Then your .env.local file should contain:
+
+PERPLEXITY_API_KEY=pplx-a1b2c3d4e5f6g7h8i9j0
+
+IMPORTANT NOTES:
+---------------
+- No spaces around the equals sign
+- No quotes around the value
+- File must be named exactly: .env.local
+- File must be in the project root directory
+- This file is gitignored (not tracked by version control)
+- Never commit this file to GitHub
+- Never share this file publicly
+
+VERIFICATION:
+------------
+After creating .env.local:
+1. Restart the development server (if running)
+2. Run: npm run dev
+3. Open: http://localhost:3000
+4. Try submitting text in any tab
+5. If successful, you'll see a summary response
+
+TROUBLESHOOTING:
+---------------
+Error: "API key not configured"
+- Solution: Check file is named .env.local (not .env.txt)
+- Solution: Check file is in project root
+- Solution: Restart dev server
+
+Error: "Authentication failed"
+- Solution: Check API key is correct
+- Solution: Generate a new key from Perplexity
+- Solution: Update .env.local with new key
+
+Error: "Rate limit exceeded"
+- Solution: Wait a few minutes
+- Solution: Check your Perplexity plan limits
+
+DEPLOYMENT:
+----------
+When deploying to production (Vercel, Netlify, etc.):
+1. Do NOT commit .env.local
+2. Set PERPLEXITY_API_KEY in platform's environment settings
+3. Redeploy after setting environment variables
+
+================================================================================
+For more information, see SETUP_GUIDE.md
+================================================================================
+
